@@ -69,7 +69,7 @@ class Town extends Model
             return self::$nameList[$stateId];
         }
 
-        return self::$nameList[$stateId] = self::whereStateId($stateId)->orderBy('name', 'asc')->lists('name', 'id');
+        return self::$nameList[$stateId] = self::whereStateId($stateId)->isEnabled()->orderBy('name', 'asc')->lists('name', 'id');
     }
 
     /**
